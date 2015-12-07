@@ -15,21 +15,79 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router',
+    'satellizer',
+    'toastr'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider, $authProvider) {
+
+    $stateProvider
+      .state('home', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        url: '/'
       })
-      .when('/about', {
+      .state('about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        url: '/about'
       })
-      .otherwise({
-        redirectTo: '/'
+      .state('login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        url: '/login'
+      })
+      .state('profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl',
+        url: '/profile'
       });
+
+      // Generic OAuth 2.0
+      $authProvider.oauth2({
+        name: null,
+        url: null,
+        clientId: null,
+        redirectUri: null,
+        authorizationEndpoint: null,
+        defaultUrlParams: ['response_type', 'client_id', 'redirect_uri'],
+        requiredUrlParams: null,
+        optionalUrlParams: null,
+        scope: null,
+        scopePrefix: null,
+        scopeDelimiter: null,
+        state: null,
+        type: null,
+        popupOptions: null,
+        responseType: 'code',
+        responseParams: {
+        code: 'code',
+        clientId: 'clientId',
+        redirectUri: 'redirectUri'
+        }
+      });
+
+      $urlRouterProvider.otherwise('/');
+
+      function skipIfLoggedIn($q, $auth) {
+        var deferred = $q.defer();
+        if ($auth.isAuthenticated()) {
+          deferred.reject();
+        } else {
+          deferred.resolve();
+        }
+        return deferred.promise;
+      }
+
+      function loginRequired($q, $location, $auth) {
+        var deferred = $q.defer();
+        if ($auth.isAuthenticated()) {
+          deferred.resolve();
+        } else {
+          $location.path('/login');
+        }
+        return deferred.promise;
+      }
+
   });
