@@ -11,7 +11,7 @@
 				<a href="/#/logout">Logout</a>
 			</h5>
 		</div>
-		<div class="col-md-6 col-md-offset-3 col-sm-6 col-xs-12" ng-controller="ProfileCtrl">
+		<div class="col-md-6 col-md-offset-3 col-sm-6 col-xs-12" ng-init="getUser" >
 			<form action="">
 				<div class="form-group">
 					<input required type="text" placeholder="Name" ng-model="user.name" class="form-control">
@@ -45,7 +45,7 @@
 				<div class="form-group">
 					<input type="file" ng-model="user.file" class="form-control">
 				</div>
-				<button class="btn btn-success">
+				<button class="btn btn-success" ng-click="addUser(user)">
 					Update
 				</button>
 			</form>

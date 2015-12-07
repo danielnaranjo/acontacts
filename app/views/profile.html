@@ -14,7 +14,8 @@
 			</h5>
 		</div>
 		<div class="col-md-9">
-			<table class="table table-striped">
+			<h3 ng-hide="user!=''">Loading data..</h3>
+			<table class="table table-striped" ng-show="user!=''">
 				<theader>
 					<tr>
 						<td>
@@ -26,10 +27,10 @@
 						<td>
 							<strong>Phone</strong>
 						</td>
-						<td>
+						<td class="hidden-xs">
 							<strong>Location</strong>
 						</td>
-						<td>
+						<td class="hidden-xs">
 							
 						</td>
 					</tr>
@@ -40,19 +41,25 @@
 							<a href="#/user/{{u.id}}">{{u.name}}</a>
 						</td>
 						<td>
-							<a href="mailto:{{u.email}}">{{u.email}}</a>
+							<a href="mailto:{{u.email}}">
+								<span class="hidden-xs">{{u.email}}</span>
+								<span class="visible-xs">E-mail</span>
+							</a>
 						</td>
 						<td>
-							<a href="tel:{{u.phone1}}">{{u.phone1}}</a>
+							<a href="tel:{{u.phone1}}">
+								<span class="hidden-xs">{{u.phone1}}</span>
+								<span class="visible-xs">Call</span>
+							</a>
 						</td>
-						<td>
+						<td class="hidden-xs">
 							{{u.state.name}} {{u.country.name}}
 						</td>
-						<td>
+						<td class="hidden-xs">
 							<a href="#/user/{{u.id}}" style="margin-right:10px;">
 								<i class="fa fa-edit"></i>
 							</a>
-							<a href="#/user/{{u.id}}">
+							<a href="javascript:;" ng-click="removeUser($index)">
 								<i class="fa fa-trash"></i>
 							</a>
 						</td>
@@ -61,22 +68,22 @@
 			</table>
 			<p class="text-center">
 				<nav>
-					<ul class="pagination">
-					<li>
-						<a href="#" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li>
-						<a href="#" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
+					<ul class="pagination" ng-show="user!=''">
+						<li>
+							<a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li>
+							<a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
 					</ul>
 				</nav>				
 			</p>

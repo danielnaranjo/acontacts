@@ -56,11 +56,17 @@ angular
         controller: 'ProfileCtrl',
         url: '/profile',
         resolve: {
+          // Uncommet when API access is done!
           // loginRequired: loginRequired
+
+          // For test propuse :)
           loginRequired: skipIfLoggedIn
         }
       });
 
+
+
+      //  Based on Satellizer.
       // Generic OAuth 2.0
       $authProvider.oauth2({
         name: null,

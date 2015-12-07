@@ -115,8 +115,8 @@ angular.module('contactsApp')
           },
           {
           "id": 6,
-          "name": "Nicolas", 
-          "email": "algun@email.com", 
+          "name": "Ezequiel", 
+          "email": "ezequiel@email.com", 
           "phone1": "011 - 555 - 5555",
           "birthdate": "1976/12/03", 
           "address": "Av. Falsa 123", 
@@ -131,4 +131,7 @@ angular.module('contactsApp')
           "avatar": "/path/a/la/imagen.jpg"
           }];
 
+        $scope.removeUser = function(index){
+          $scope.user.splice(index, 1);
+  }
   });
