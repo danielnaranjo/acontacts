@@ -36,12 +36,23 @@ angular
       .state('login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
-        url: '/login'
+        url: '/login',
+        resolve: {
+          skipIfLoggedIn: skipIfLoggedIn
+        }
+      })
+      .state('logout', {
+        template: null,
+        controller: 'LogoutCtrl',
+        url: '/logout'
       })
       .state('profile', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',
-        url: '/profile'
+        url: '/profile',
+        resolve: {
+          loginRequired: skipIfLoggedIn// loginRequired
+        }
       });
 
       // Generic OAuth 2.0

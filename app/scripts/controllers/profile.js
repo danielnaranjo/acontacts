@@ -10,7 +10,7 @@
 angular.module('contactsApp')
   .controller('ProfileCtrl', function ($scope, $auth, toastr, Account) {
 
-	$scope.getProfile = function() {
+    $scope.getProfile = function() {
       Account.getProfile()
         .then(function(response) {
           $scope.user = response.data;

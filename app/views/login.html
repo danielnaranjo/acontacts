@@ -1,1 +1,22 @@
-<p>This is the login view.</p>
+<section class="minimum">
+	<div class="row container">
+	  <div class="col-md-4 col-md-offset-4">
+	    <h3>Checkpoint Charlie</h3>
+	    <p>Only user allowed in this point</p>
+	    <form action="">
+	    	<div class="form-group">
+	    		<label>Username / E-mail</label>
+	    		<input type="text" class="form-control" ng-model="data.username" required>
+	    	</div>
+	    	<div class="form-group">
+	    		<label>Password</label>
+	    		<input type="password" class="form-control" ng-model="data.password" required>
+	    	</div>
+	    	<button ng-click="login()" class="btn btn-success pull-right">
+	    		Get Access
+	    	</button>
+	    	<p>(*) Only personal authorizated</p>
+	    </form>
+	  </div>
+	</div>	
+</section>
