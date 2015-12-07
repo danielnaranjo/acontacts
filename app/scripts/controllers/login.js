@@ -8,7 +8,7 @@
  * Controller of the contactsApp
  */
 angular.module('contactsApp')
-  .controller('LoginCtrl', function ($scope, $location, $auth, toastr) {
+  .controller('LoginCtrl', function ($scope, $location, $auth, toastr, CONFIG) {
 
     $scope.user = {
       username:'user1@domain.com',

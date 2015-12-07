@@ -8,7 +8,7 @@
  * Controller of the contactsApp
  */
 angular.module('contactsApp')
-  .controller('LogoutCtrl', function ($location, $auth, toastr) {
+  .controller('LogoutCtrl', function ($location, $auth, toastr, CONFIG) {
 	if (!$auth.isAuthenticated()) { return; }
     $auth.logout()
       .then(function() {

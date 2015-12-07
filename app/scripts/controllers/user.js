@@ -8,15 +8,14 @@
  * Controller of the contactsApp
  */
 angular.module('contactsApp')
-  .controller('UserCtrl', function ($scope, $location, $http) {
+  .controller('UserCtrl', function ($scope, $location, $http, CONFIG) {
     
     $scope.user = {};
 
-    $scope.getUser = function(){
+    $scope.getUsers = function(){
 		$http({
 			method:'GET',
-			url:'https://contacts.theamalgama.com',
-			data:''
+			url:CONFIG.AURL+'/users/'+user_id+'/contacts'
 		})        
 		.success(function(data) {
             $scope.feed = data.response;
@@ -26,9 +25,61 @@ angular.module('contactsApp')
         });
     };
 
-    $scope.addUser = function(item){
-      $scope.user.push(item);
-      $scope.newItem = null;
+    $scope.updateUser = function(){
+		$http({
+			method:'PATCH',
+			url:CONFIG.AURL+'/users/'+user_id+'/contacts',
+			data:data:$.param($scope.user),
+		})        
+		.success(function(data) {
+            $scope.feed = data.response;
+        })
+        .error(function(){
+			console.log('Error');
+        });
+    };
+
+    $scope.getUser = function(){
+		$http({
+			method:'GET',
+			url:CONFIG.AURL+'/users/'+user_id+'/contacts/'+contact_id,
+			data:data:$.param($scope.user),
+		})        
+		.success(function(data) {
+            $scope.feed = data.response;
+        })
+        .error(function(){
+			console.log('Error');
+        });
+    };
+
+    $scope.removeUser = function(index){
+        $scope.user.splice(index, 1);
+        $http({
+            method:'DELETE',
+            url:CONFIG.AURL+'/users/'+user_id+'/contacts/'+contact_id,
+            data:data:$.param($scope.user),
+        })        
+        .success(function(data) {
+            $scope.feed = data.response;
+        })
+        .error(function(){
+            console.log('Error');
+        });
+    }
+
+    $scope.addUser = function(){
+		$http({
+			method:'POST',
+			url:'/users/'+user_id+'/contacts',
+			data:data:$.param($scope.user),
+		})        
+		.success(function(data) {
+            $scope.feed = data.response;
+        })
+        .error(function(){
+			console.log('Error');
+        });
       $location.path('/profile');
     };
 

@@ -8,7 +8,7 @@
  * Controller of the contactsApp
  */
 angular.module('contactsApp')
-  .controller('ProfileCtrl', function ($scope, $auth, toastr, Account) {
+  .controller('ProfileCtrl', function ($scope, $auth, toastr, Account, CONFIG) {
 
     // $scope.getProfile = function() {
     //   Account.getProfile()
@@ -133,5 +133,5 @@ angular.module('contactsApp')
 
         $scope.removeUser = function(index){
           $scope.user.splice(index, 1);
-  }
+        };
   });

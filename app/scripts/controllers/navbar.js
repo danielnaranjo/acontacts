@@ -8,7 +8,7 @@
  * Controller of the contactsApp
  */
 angular.module('contactsApp')
-  .controller('NavbarCtrl', function ($scope, $auth) {
+  .controller('NavbarCtrl', function ($scope, $auth, CONFIG) {
     $scope.isAuthenticated = function() {
       return $auth.isAuthenticated();
     };

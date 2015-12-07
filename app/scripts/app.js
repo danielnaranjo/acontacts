@@ -20,6 +20,11 @@ angular
     'satellizer',
     'toastr'
   ])
+
+  .constant('CONFIG', {
+    'AURL':'https://contacts.theamalgama.com/v1'
+  })
+
   .config(function ($stateProvider, $urlRouterProvider, $authProvider) {
 
     $stateProvider
@@ -49,7 +54,13 @@ angular
       .state('user', {
         templateUrl: 'views/user.html',
         controller: 'UserCtrl',
-        url: '/user/:id'
+        url: '/user/:id',
+        resolve: {
+          // Uncommet when API access is done!
+          loginRequired: loginRequired
+          // For test propuse :)
+          // loginRequired: skipIfLoggedIn
+        }
       })
       .state('profile', {
         templateUrl: 'views/profile.html',
@@ -57,10 +68,9 @@ angular
         url: '/profile',
         resolve: {
           // Uncommet when API access is done!
-          // loginRequired: loginRequired
-
+          loginRequired: loginRequired
           // For test propuse :)
-          loginRequired: skipIfLoggedIn
+          // loginRequired: skipIfLoggedIn
         }
       });
 
