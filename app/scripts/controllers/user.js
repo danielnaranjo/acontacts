@@ -12,7 +12,7 @@ angular.module('contactsApp')
     
     $scope.user = {};
 
-    $scope.getUsers = function(){
+    $scope.getUsers = function(user_id){
 		$http({
 			method:'GET',
 			url:CONFIG.AURL+'/users/'+user_id+'/contacts'
@@ -25,7 +25,7 @@ angular.module('contactsApp')
         });
     };
 
-    $scope.updateUser = function(){
+    $scope.updateUser = function(user_id){
 		$http({
 			method:'PATCH',
 			url:CONFIG.AURL+'/users/'+user_id+'/contacts',
@@ -39,12 +39,12 @@ angular.module('contactsApp')
         });
     };
 
-    $scope.getUser = function(){
+    $scope.getUser = function(user_id){
 		$http({
 			method:'GET',
 			url:CONFIG.AURL+'/users/'+user_id+'/contacts/'+contact_id,
 			data:data:$.param($scope.user),
-		})        
+		})
 		.success(function(data) {
             $scope.feed = data.response;
         })
