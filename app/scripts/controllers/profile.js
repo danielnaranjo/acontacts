@@ -30,11 +30,15 @@ angular.module('contactsApp')
           "phone1": "011 - 555 - 5555",
           "phone2": "+54 11 - 1234 - 5555", 
           "birthdate": "1976/12/03", 
-          "address": "Av. Falsa 123", "state": {
-          "id": 1,
-          "name": "Buenos Aires" },
-          "country": { "id": 1,
-          "name": "Argentina" },
+          "address": "Av. Falsa 123", 
+          "state": {
+            "id": 1,
+            "name": "Buenos Aires" 
+          },
+          "country": { 
+            "id": 1,
+            "name": "Argentina" 
+          },
           "avatar": "/path/a/la/imagen.jpg"
           },
           {
@@ -44,11 +48,15 @@ angular.module('contactsApp')
           "phone1": "011 - 555 - 5555",
           "phone2": "+54 11 - 1234 - 5555", 
           "birthdate": "1976/12/03", 
-          "address": "Av. Falsa 123", "state": {
-          "id": 1,
-          "name": "Buenos Aires" },
-          "country": { "id": 1,
-          "name": "Argentina" },
+          "address": "Av. Falsa 123", 
+          "state": {
+            "id": 1,
+            "name": "Buenos Aires" 
+          },
+          "country": { 
+            "id": 1,
+            "name": "Argentina" 
+          },
           "avatar": "/path/a/la/imagen.jpg"
           },
           {
@@ -58,11 +66,15 @@ angular.module('contactsApp')
           "phone1": "011 - 555 - 5555",
           "phone2": "+54 11 - 1234 - 5555", 
           "birthdate": "1976/12/03", 
-          "address": "Av. Falsa 123", "state": {
-          "id": 1,
-          "name": "Tigre" },
-          "country": { "id": 1,
-          "name": "Argentina" },
+          "address": "Av. Falsa 123", 
+          "state": {
+            "id": 1,
+            "name": "Tigre" 
+          },
+          "country": { 
+            "id": 1,
+            "name": "Argentina" 
+          },
           "avatar": "/path/a/la/imagen.jpg"
           },
           {
@@ -72,11 +84,15 @@ angular.module('contactsApp')
           "phone1": "011 - 555 - 5555",
           "phone2": "+54 11 - 1234 - 5555", 
           "birthdate": "1976/12/03", 
-          "address": "Av. Falsa 123", "state": {
-          "id": 1,
-          "name": "Buenos Aires" },
-          "country": { "id": 1,
-          "name": "Argentina" },
+          "address": "Av. Falsa 123", 
+          "state": {
+            "id": 1,
+            "name": "Buenos Aires" 
+          },
+          "country": { 
+            "id": 1,
+            "name": "Argentina" 
+          },
           "avatar": "/path/a/la/imagen.jpg"
           },
           {
@@ -86,11 +102,15 @@ angular.module('contactsApp')
           "phone1": "+54 11 - 1234 - 5555",
           "phone2": "", 
           "birthdate": "1976/12/03", 
-          "address": "Av. Falsa 123", "state": {
-          "id": 1,
-          "name": "Buenos Aires" },
-          "country": { "id": 1,
-          "name": "Argentina" },
+          "address": "Av. Falsa 123", 
+          "state": {
+            "id": 1,
+            "name": "Buenos Aires" 
+          },
+          "country": { 
+            "id": 1,
+            "name": "Argentina" 
+          },
           "avatar": "/path/a/la/imagen.jpg"
           },
           {
@@ -99,11 +119,15 @@ angular.module('contactsApp')
           "email": "algun@email.com", 
           "phone1": "011 - 555 - 5555",
           "birthdate": "1976/12/03", 
-          "address": "Av. Falsa 123", "state": {
-          "id": 1,
-          "name": "Buenos Aires" },
-          "country": { "id": 1,
-          "name": "Argentina" },
+          "address": "Av. Falsa 123", 
+          "state": {
+            "id": 1,
+            "name": "Buenos Aires" 
+          },
+          "country": { 
+            "id": 1,
+            "name": "Argentina" 
+          },
           "avatar": "/path/a/la/imagen.jpg"
           }];
 

@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-3 col-sm-6 col-xs-12">
 			<h4>
-				<a href="#">New contact</a>
+				<a href="#/user/0">New contact</a>
 			</h4>
 			<form action="">
 				<div class="form-group">
@@ -37,7 +37,7 @@
 				<tbody>
 					<tr ng-repeat="u in user | filter:data.filter">
 						<td>
-							<a href="#/{{u.id}}">{{u.name}}</a>
+							<a href="#/user/{{u.id}}">{{u.name}}</a>
 						</td>
 						<td>
 							<a href="mailto:{{u.email}}">{{u.email}}</a>
@@ -49,10 +49,10 @@
 							{{u.state.name}} {{u.country.name}}
 						</td>
 						<td>
-							<a href="#{{u.id}}" style="margin-right:10px;">
+							<a href="#/user/{{u.id}}" style="margin-right:10px;">
 								<i class="fa fa-edit"></i>
 							</a>
-							<a href="#{{u.id}}">
+							<a href="#/user/{{u.id}}">
 								<i class="fa fa-trash"></i>
 							</a>
 						</td>

@@ -46,6 +46,11 @@ angular
         controller: 'LogoutCtrl',
         url: '/logout'
       })
+      .state('user', {
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl',
+        url: '/user/:id'
+      })
       .state('profile', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',

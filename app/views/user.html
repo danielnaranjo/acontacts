@@ -1,0 +1,54 @@
+<section>
+	<div class="row">
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			<h4>
+				<a href="#/user/0">New contact</a>
+			</h4>
+			<h4>
+				<a href="#/profile">Back to Contacts</a>
+			</h4>
+			<h5 style="margin-top:100px">
+				<a href="/#/logout">Logout</a>
+			</h5>
+		</div>
+		<div class="col-md-6 col-md-offset-3 col-sm-6 col-xs-12" ng-controller="ProfileCtrl">
+			<form action="">
+				<div class="form-group">
+					<input required type="text" placeholder="Name" ng-model="user.name" class="form-control">
+				</div>
+				<div class="form-group">
+					<input required type="email" placeholder="E-mail" ng-model="user.email" class="form-control">
+				</div>
+				<div class="form-group">
+					<input required type="tel" placeholder="Phone" ng-model="user.phone" class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="tel" placeholder="Mobile" ng-model="user.mobile" class="form-control">
+				</div>
+				<div class="form-group">
+					<input required type="date" placeholder="Birthdate" ng-model="user.birthdate" class="form-control">
+				</div>
+				<div class="form-group">
+					<textarea ng-model="user.address" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+					<select ng-model="user.state" class="form-control">
+						<option value="">State/Province</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<select ng-model="user.country" class="form-control">
+						<option value="">Country</option>
+					</select>
+				</div>
+				<hr>
+				<div class="form-group">
+					<input type="file" ng-model="user.file" class="form-control">
+				</div>
+				<button class="btn btn-success">
+					Update
+				</button>
+			</form>
+		</div>
+	</div>	
+</section>
