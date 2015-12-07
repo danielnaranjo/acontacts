@@ -45,7 +45,9 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/login">login</a></li>
+              <li ng-if="isAuthenticated()"><a href="#/profile">Profile</a></li>
+              <li ng-if="!isAuthenticated()"><a ng-href="#/login">Login / Sign up</a></li>
+              <li ng-if="isAuthenticated()"><a href="#/logout">Logout</a></li>
               <li><a ng-href="#/">Contact</a></li>
             </ul>
           </div>
@@ -122,6 +124,7 @@
         <script src="scripts/controllers/logout.js"></script>
         <script src="scripts/controllers/navbar.js"></script>
         <script src="scripts/controllers/profile.js"></script>
+        <script src="scripts/services/account.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -51,17 +51,18 @@ angular
         controller: 'ProfileCtrl',
         url: '/profile',
         resolve: {
-          loginRequired: skipIfLoggedIn// loginRequired
+          // loginRequired: loginRequired
+          loginRequired: skipIfLoggedIn
         }
       });
 
       // Generic OAuth 2.0
       $authProvider.oauth2({
         name: null,
-        url: null,
+        url: 'https://contacts.theamalgama.com',
         clientId: null,
-        redirectUri: null,
-        authorizationEndpoint: null,
+        redirectUri: '/oauth/token',
+        authorizationEndpoint: '/oauth/token',
         defaultUrlParams: ['response_type', 'client_id', 'redirect_uri'],
         requiredUrlParams: null,
         optionalUrlParams: null,
@@ -73,9 +74,9 @@ angular
         popupOptions: null,
         responseType: 'code',
         responseParams: {
-        code: 'code',
-        clientId: 'clientId',
-        redirectUri: 'redirectUri'
+          code: 'code',
+          clientId: 'clientId',
+          redirectUri: 'redirectUri'
         }
       });
 

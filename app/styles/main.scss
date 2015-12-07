@@ -17,3 +17,7 @@ body {
 .minimum {
   min-height: 400px;
 }
+
+table tbody tr td a {
+  text-decoration: none !important;
+} 

@@ -10,6 +10,11 @@
 angular.module('contactsApp')
   .controller('LoginCtrl', function ($scope, $location, $auth, toastr) {
 
+    $scope.user = {
+      username:'user1@domain.com',
+      password:'S0mePassw0rd!'
+    }
+
 	$scope.login = function() {
       $auth.login($scope.user)
         .then(function() {

@@ -1,16 +1,16 @@
 <section>
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-3 col-sm-6 col-xs-12">
 			<h4>
 				<a href="#">New contact</a>
 			</h4>
 			<form action="">
 				<div class="form-group">
-					<input type="text" placeholder="filter by..." ng-model="filter" class="form-control">
+					<input type="text" placeholder="filter by..." ng-model="data.filter" class="form-control">
 				</div>
 			</form>
 			<h5 style="margin-top:100px">
-				<a href="#">Logout</a>
+				<a href="/#/logout">Logout</a>
 			</h5>
 		</div>
 		<div class="col-md-9">
@@ -27,95 +27,34 @@
 							<strong>Phone</strong>
 						</td>
 						<td>
-							<strong>Birthdate</strong>
+							<strong>Location</strong>
 						</td>
 						<td>
-							<strong>State</strong>
-						</td>
-						<td>
-							<strong>Country</strong>
+							
 						</td>
 					</tr>
 				</theader>
 				<tbody>
-					<tr>
+					<tr ng-repeat="u in user | filter:data.filter">
 						<td>
-							<a href="#/">test</a>
+							<a href="#/{{u.id}}">{{u.name}}</a>
 						</td>
 						<td>
-							<a href="mailto:test">test</a>
+							<a href="mailto:{{u.email}}">{{u.email}}</a>
 						</td>
 						<td>
-							<a href="tel:1234">test</a>
+							<a href="tel:{{u.phone1}}">{{u.phone1}}</a>
 						</td>
 						<td>
-							test
+							{{u.state.name}} {{u.country.name}}
 						</td>
 						<td>
-							test
-						</td>
-						<td>
-							test
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="#/">test</a>
-						</td>
-						<td>
-							<a href="mailto:test">test</a>
-						</td>
-						<td>
-							<a href="tel:1234">test</a>
-						</td>
-						<td>
-							test
-						</td>
-						<td>
-							test
-						</td>
-						<td>
-							test
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="#/">test</a>
-						</td>
-						<td>
-							<a href="mailto:test">test</a>
-						</td>
-						<td>
-							<a href="tel:1234">test</a>
-						</td>
-						<td>
-							test
-						</td>
-						<td>
-							test
-						</td>
-						<td>
-							test
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="#/">test</a>
-						</td>
-						<td>
-							<a href="mailto:test">test</a>
-						</td>
-						<td>
-							<a href="tel:1234">test</a>
-						</td>
-						<td>
-							test
-						</td>
-						<td>
-							test
-						</td>
-						<td>
-							test
+							<a href="#{{u.id}}" style="margin-right:10px;">
+								<i class="fa fa-edit"></i>
+							</a>
+							<a href="#{{u.id}}">
+								<i class="fa fa-trash"></i>
+							</a>
 						</td>
 					</tr>
 				</tbody>
